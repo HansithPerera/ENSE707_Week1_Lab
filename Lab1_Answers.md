@@ -108,3 +108,35 @@ display balance, and handle errors. The current implementation is missing valida
 - **Maintainability** — the code should be easy to understand, modify, and extend.
 - **Performance** — the system should handle transactions efficiently, even under load.
 - **Security** — sensitive financial data must be protected against unauthorized access.
+
+
+## Activity 4 - QA vs QC
+
+QA abd QC are both essential to software quality but operate at differently.
+**Quality Assurance(QA** is process oriented and proactive. It focuses on preventing defects before they occur by improving the processes used to develop the software.
+Rahther than checking whether a specific product is correct, QA asks whether the team is following the practices that consistently produce correct products. with examples like
+coding standards reviewing requirements,a auditing processes and training the team. the philosophy is buid quality into the process rather than inspect it inot the product.
+
+**Quality Control(QC)** is product oriented and reactive. it focuses on identifying defects in actual software after the development processes. QC asks direct question that if the build meet
+it's specified requirements? this includes unit testing, executing acceptance tests, and reporting defects. QC is reactive because it identifies defects that already exist.
+
+**Key differences between QA and QC:**
+
+| Aspect | Quality Assurance (QA) | Quality Control (QC) |
+|--------|-----------------------|---------------------|
+| Focus | Process-oriented, proactive | Product-oriented, reactive |
+| Timing | Throughout development | After development exist |
+| Approach | Prevents defects | Identifies defects |
+
+### Classification of activities
+
+Writing coding standards for money calculations  - QA
+Running unit tests for withdrawal behaviour - QC
+Reviewing requirements for ambiguity - QA
+Testing negative deposit input - QC
+Analysing repeated transaction defects - QC
+Reporting a failed test case - QC
+Creating a checklist for financial validation rules - QA
+Retesting after fixing withdrawal logic - QC
+
+
