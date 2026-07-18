@@ -170,3 +170,17 @@ refactored BankAccount class:
 - However, a real banking system would also need authentication, authorization, 
   encryption, and audit logging - none of which are addressed here
 - This is a foundation for security, not a complete security solution
+
+
+## Activity 9 - Stakeholder and Quality Reflection
+
+### 1. Who are the stakeholders for this small banking system?
+
+- **Bank customers** - people whose money is being managed
+- **Bank staff / tellers** - operators who use the system day to day
+- **Bank management** - responsible for business outcomes and reputation
+- **Software developers** - build and maintain the system
+- **Testers / QA engineers** - verify correctness and quality
+- **Regulators and auditors** - enforce financial compliance
+- **IT operations / DevOps** - deploy and monitor the system
+- **Security teams** - protect against fraud and breaches
