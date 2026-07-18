@@ -2,28 +2,49 @@
 
 public class BankAccount
 {
-    public string AccountHolder { get; set; }
+    // Fee applied to each transaction (2%)
+    private const decimal TransactionFeeRate = 0.02m;
+
+    public string AccountHolder { get; }
     public decimal Balance { get; private set; }
 
     public BankAccount(string accountHolder, decimal openingBalance)
     {
+        if (string.IsNullOrWhiteSpace(accountHolder))
+            throw new ArgumentException("Account holder name is required.");
+
+        if (openingBalance < 0)
+            throw new ArgumentException("Opening balance cannot be negative.");
+
         AccountHolder = accountHolder;
         Balance = openingBalance;
     }
 
     public void Deposit(decimal amount)
     {
-        Balance = Balance + amount;
+        if (amount <= 0)
+            throw new ArgumentException("Deposit amount must be positive.");
+
+        Balance += amount;
     }
 
     public bool Withdraw(decimal amount)
     {
-        Balance = Balance - amount;
+        if (amount <= 0)
+            throw new ArgumentException("Withdrawal amount must be positive.");
+
+        if (amount > Balance)
+            return false;
+
+        Balance -= amount;
         return true;
     }
 
     public decimal CalculateTransactionFee(decimal amount)
     {
-        return amount * 0.02m;
+        if (amount <= 0)
+            throw new ArgumentException("Transaction amount must be positive.");
+
+        return Math.Round(amount * TransactionFeeRate, 2);
     }
 }
