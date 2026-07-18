@@ -157,3 +157,16 @@ refactored BankAccount class:
 - The account can no longer enter an inconsistent state (e.g. negative balance)
 - The Withdraw return value is now meaningful - true means it happened, 
   false means it was refused
+
+### Testability (improved)
+- Behaviour is now specifiable: tests can assert on exceptions being thrown, 
+  false being returned for overdrafts, and balance being unchanged after 
+  rejected operations
+- Each validation branch is independently testable, enabling meaningful 
+  test coverage
+
+### Security (partially improved)
+- Input validation reduces the risk of malformed data corrupting the balance
+- However, a real banking system would also need authentication, authorization, 
+  encryption, and audit logging - none of which are addressed here
+- This is a foundation for security, not a complete security solution
