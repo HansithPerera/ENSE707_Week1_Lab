@@ -73,3 +73,28 @@ public class BankAccountTests
 
         Assert.AreEqual(4.00m, fee);
     }
+
+    [TestMethod]
+    public void Constructor_EmptyAccountHolder_ThrowsException()
+    {
+        Assert.ThrowsException<ArgumentException>(() =>
+            new BankAccount("", 100));
+    }
+
+    [TestMethod]
+    public void Deposit_ZeroAmount_ThrowsException()
+    {
+        BankAccount account = new BankAccount("Test User", 100);
+
+        Assert.ThrowsException<ArgumentException>(() =>
+            account.Deposit(0));
+    }
+
+    [TestMethod]
+    public void CalculateTransactionFee_ZeroAmount_ThrowsException()
+    {
+        BankAccount account = new BankAccount("Test User", 100);
+
+        Assert.ThrowsException<ArgumentException>(() =>
+            account.CalculateTransactionFee(0));
+    }
