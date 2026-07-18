@@ -37,9 +37,8 @@ public class BankAccountTests
         Assert.IsFalse(result);
         Assert.AreEqual(100, account.Balance);
     }
-}
 
-[TestMethod]
+    [TestMethod]
     public void Constructor_NegativeOpeningBalance_ThrowsException()
     {
         Assert.ThrowsException<ArgumentException>(() =>
@@ -98,3 +97,4 @@ public class BankAccountTests
         Assert.ThrowsException<ArgumentException>(() =>
             account.CalculateTransactionFee(0));
     }
+}
