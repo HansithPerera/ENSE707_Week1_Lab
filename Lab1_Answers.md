@@ -140,3 +140,20 @@ Creating a checklist for financial validation rules - QA
 Retesting after fixing withdrawal logic - QC
 
 
+## Activity 7 - Quality Improvement Discussion
+
+The following ISO/IEC 25010 quality attributes were improved by the 
+refactored BankAccount class:
+
+### Correctness (improved)
+- Deposit no longer silently reduces the balance when given a negative amount
+- Withdraw no longer allows overdrafts; balance stays untouched on rejected withdrawal
+- Fee calculation is now rounded to 2 decimal places, matching real currency handling
+- Opening balance cannot be negative
+
+### Reliability (improved)
+- Invalid inputs now throw ArgumentException with clear messages instead of 
+  silently producing wrong results
+- The account can no longer enter an inconsistent state (e.g. negative balance)
+- The Withdraw return value is now meaningful - true means it happened, 
+  false means it was refused
