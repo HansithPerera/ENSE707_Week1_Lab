@@ -84,10 +84,13 @@ its specified requirements? This includes unit testing, executing acceptance tes
 
 ### Key differences between QA and QC
 
-| Aspect   | Quality Assurance (QA)       | Quality Control (QC)         |
-| Focus    | Process-oriented, proactive  | Product-oriented, reactive   |
-| Timing   | Throughout development       | After development exists     |
-| Approach | Prevents defects             | Identifies defects           |
+
+Focus -> QA - Process-oriented, proactive 
+         QC - Product-oriented, reactive
+Timing -> QA - Throughout development
+          QC - After development exists
+Approach -> QA- Prevents defects
+            QC - Identifies defects
 
 ### Classification of activities
 
