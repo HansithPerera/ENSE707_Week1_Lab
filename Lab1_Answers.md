@@ -184,3 +184,54 @@ refactored BankAccount class:
 - **Regulators and auditors** - enforce financial compliance
 - **IT operations / DevOps** - deploy and monitor the system
 - **Security teams** - protect against fraud and breaches
+
+
+### 2. What does quality mean to each stakeholder?
+Customers - Correct balances, no overdrafts, safe transactions, trust
+Bank staff -  Easy to use, few errors, quick response, meaningful messages
+Management - Reliable operation, no reputational or legal risk, low support cost
+Developers -  Clean code, easy to change, well documented, testable 
+Testers - Clear specifications, reproducible defects, measurable coverage
+Regulators - Compliance with laws, audit trails, no fraud
+
+### 3. Which defects were detected through testing?
+- Negative deposit reducing balance
+- Withdrawal allowing overdraft
+- Fee calculation not rounded to 2 decimal places
+- Negative opening balance allowed
+- Lack of meaningful return value for Withdraw method
+
+### 4. Which defects could have been prevented through QA activities?
+**Requirement reviews** - the requirement to prevent overdrafts was stated 
+  but not enforced; a review would have flagged the missing acceptance criteria
+
+**Coding standards** for money handling would have required input validation, 
+  rounding rules, and no magic numbers
+
+**Design inspections** would have flagged that Withdraw's boolean return 
+  value has no meaningful failure path
+
+**Peer code reviews** would have caught the negative deposit and overdraft issues before they were merged
+
+### 5. How did Copilot help?
+Copilot suggested unit test cases based on my description of the class, 
+including boundary tests (negative amounts, zero amounts) and validation 
+tests (invalid inputs). It accelerated the process of generating test 
+scaffolding and reminded me of edge cases I might have missed, such as 
+zero-value inputs and empty account holder names. I would say it is good as a brainstoming to test ideas rather than final code.
+
+### 6. What Copilot suggestion did you reject or modify, and why?
+
+I did not reject anything from copilot , but I did modify the suggested test cases to include more specific assertions on 
+exception messages and to cover additional edge cases like very large deposits and withdrawals. 
+The original suggestions were a good starting point, but I wanted to ensure comprehensive coverage of the BankAccount class's behavior.
+
+### 7. What is the difference between QA and QC in this lab?
+
+QA focused on the process and design that would prevent defects; QC 
+focused on inspecting the actual code and its behaviour. Both were needed .
+The tests would not have caught anything if the tests themselves were 
+poorly designed, and the code improvements would have been guesswork 
+without tests to verify them.
+
+
